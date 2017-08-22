@@ -1,0 +1,39 @@
+<html>
+<head>
+	<title>Add Data</title>
+</head>
+
+<body>
+	<a href="index.php">Home</a>
+	<br/><br/>
+
+	<form action="add.php" method="post" name="form1">
+		<p>Add allowed IP to the List</p>
+		<table width="25%" border="0">
+			<tr> 
+				<td>IP</td>
+				<td><input type="text" name="ip" placeholder="127.0.0.0"></td>
+			</tr>
+			<tr> 
+				<td></td>
+				<td><input type="submit" name="Submit" value="Add"></td>
+			</tr>
+		</table>
+	</form>
+
+	<form action="add.php" method="post" name="form1">
+		<p>Add allowed IP Range to the List</p>
+		<table width="25%" border="0">
+			<tr> 
+				<td>IP <br>Range </td>
+				<td><input type="text" name="iprange" placeholder="127.0.0 or 192.168.0"></td>
+			</tr>
+			<tr> 
+				<td></td>
+				<td><input type="submit" name="Submit" value="Add"></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
+
