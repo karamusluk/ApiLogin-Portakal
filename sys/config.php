@@ -1,4 +1,5 @@
 <?php
+include('../config.php');
 /*
 // mysql_connect("database-host", "username", "password")
 $conn = mysql_connect("localhost","root","root") 
@@ -13,11 +14,7 @@ $conn = mysql_connect("localhost","root","root")
  * using mysqli_connect instead
  */
 
-$databaseHost = 'localhost';
-$databaseName = 'mustafa2_dgm';
-$databaseUsername = 'mustafa2_exs';
-$databasePassword = '1475298';
 
-$mysqli = mysqli_connect($databaseHost, $databaseUsername, $databasePassword, $databaseName); 
+$mysqli = mysqli_connect($servername, $username, $password, $dbname); 
  
 ?>

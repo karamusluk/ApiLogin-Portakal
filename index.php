@@ -99,10 +99,12 @@ if ($gClient->getAccessToken()) {
             <form id="login-form" method="post" class="form-signin" role="form" action="#" > 
                <?
                
-               if(empty($userData)){ ?> <a style="margin-bottom: 17px" class="btn btn-default google" href="<?$authUrl = $gClient->createAuthUrl(); echo filter_var($authUrl, FILTER_SANITIZE_URL);?>"> <i class="fa fa-google modal-icons"></i> Sign In with Google </a><?}
+               if(empty($userData)){ ?> <a style="margin-bottom: 17px" class="btn btn-default google" href="<?php $authUrl = $gClient->createAuthUrl(); echo filter_var($authUrl, FILTER_SANITIZE_URL);?>"> <i class="fa fa-google modal-icons"></i> Sign In with Google </a>
+               <?}
                 
-                else { ?> <a style="margin-bottom: 17px; margin-left: 10%;" class="btn btn-default google text-center" href="logout.php"> <i class="fa fa-google modal-icons"></i> Sign Out </a>
-                        <a style="margin-bottom: 17px; margin-left: 20%;" class="btn btn-default text-center" href="<?echo 'http://srv1.cinedia.net/gd.php?oathID='.$userData['oauth_uid'].'&userN='.$userData['first_name'].'&usrL='.$userData['last_name'].'&locale='.$userData['locale'];?>"> <i class="fa fa-arrow-right modal-icons"></i> Go to the System </a>
+                else { ?> 
+                        <? echo "<br>Please copy this AuthID and paste while you are starting the REST API <br> Your AuthID:<b> ".$aID ."</b><br>"; ?>
+                        <a style="margin-bottom: 17px; margin-top: 17px; margin-left: 10%;" class="btn btn-default google text-center" href="logout.php"> <i class="fa fa-google modal-icons"></i> Sign Out </a>
                     <?}
 
                 ?>

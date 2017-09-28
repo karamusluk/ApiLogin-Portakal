@@ -1,9 +1,9 @@
 <?php
 
 $servername = "localhost";
-$username = "mustafa2_exs";
-$password = "1475298";
-$dbname = "mustafa2_dgm";
+$username = "newuser";
+$password = "password1!Q";
+$dbname = "dgmed";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -45,19 +45,18 @@ if ($oauthResult->num_rows > 0) {
 }
 
 $err_msg = "";
-
+echo $_SERVER['REMOTE_ADDR'];
 //in_array(substr($_SERVER['REMOTE_ADDR'], 0, strrpos($_SERVER['REMOTE_ADDR'], '.')), $listRange)
 
 
 if (in_array($_SERVER['REMOTE_ADDR'],$listt) || in_array(substr($_SERVER['REMOTE_ADDR'], 0, strrpos($_SERVER['REMOTE_ADDR'], '.')), $listRange)){
-	
-    if (in_array($_GET['oathID'],$oauth)){
-		header('Location: http://138.197.138.136:3456');
-	}
-	else{
 
-		$err_msg = "You haven't registered to System before. You need to Register from <a href='/' style='color:brown'>this</a> link.<br>In case you cannot register pelase contact with Administator.";
-	}   
+    if (in_array($_GET['oathID'],$oauth)){
+		  header('Location: http://138.197.138.136:3456');
+	  }
+	  else{
+		  $err_msg = "You haven't registered to System before. You need to Register from <a href='/' style='color:brown'>this</a> link.<br>In case you cannot register pelase contact with Administator.";
+	  }   
 }
 
 else{
@@ -105,12 +104,12 @@ $conn->close();
               <div class="login-form">
             
 
-            <h1 class="text-center" style="color:red">API ERR</h1>
+            <h1 class="text-center" style="color:red">API ERR </h1>
             <div class="form-header">
                 <i class="fa fa-user"></i>
             </div>
             <form id="login-form" method="post" class="form-signin" role="form" action="#" >
-            <h2 class="text-center" style="font-size: 15px; margin-bottom: 17px; margin-top: 5px;"><?echo $err_msg;?></h2> 
+            <h2 class="text-center" style="font-size: 15px; margin-bottom: 17px; margin-top: 5px;"><?php echo  $err_msg;?></h2> 
             </form>
         </div>
     </div>
